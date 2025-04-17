@@ -7,9 +7,8 @@ await ConnectToDb();
 export async function POST(req:NextRequest){
     try {
     // extract token from body
-    const reqBody = await req.json();
-    const token = reqBody.token;
-
+    const {token} = await req.json()    //
+    
     if(!token){
         return NextResponse.json({message: "token not found!"}, {status:400});
     }
@@ -37,7 +36,8 @@ export async function POST(req:NextRequest){
         message : "Email verified successfully!"
     },{status:200})
 
-    } catch (error) {
+    } 
+    catch (error) {
         return NextResponse.json({
             message : "Email verification failed!",
             error

@@ -51,7 +51,7 @@ export async function SendEmail({ email, emailType, userId }: emailPropsType) {
       <p>Click 
       <a href="${process.env.DOMAIN}/${
         emailType === "Verify"
-          ? `verifyemail?token=${hashedToken}`
+          ? `verifyEmail?token=${hashedToken}`
           : `resetpassword?token=${hashedToken}`
       }">
       here</a> 
