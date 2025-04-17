@@ -49,7 +49,7 @@ export async function SendEmail({ email, emailType, userId }: emailPropsType) {
       text: "Hello world?", // plain text body
       html: `
       <p>Click 
-      <a href="${process.env.DOMAIN}/${
+      <a href="${process.env.NEXT_PUBLIC_DOMAIN}/${
         emailType === "Verify"
           ? `verifyEmail?token=${hashedToken}`
           : `resetpassword?token=${hashedToken}`
@@ -62,7 +62,7 @@ export async function SendEmail({ email, emailType, userId }: emailPropsType) {
        OR <br /> 
        copy paste the link below in your browser
        <br/>
-       ${process.env.DOMAIN}/${
+       ${process.env.NEXT_PUBLIC_DOMAIN}/${
         emailType === "Verify"
           ? `verifyemail?token=${hashedToken}`
           : `resetpassword?token=${hashedToken}`

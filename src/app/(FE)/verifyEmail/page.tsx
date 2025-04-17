@@ -43,6 +43,9 @@ export default function Verify(){
 
         <p className="text-center mt-12">{message}</p>
 
+        <br />
+        <p className="text-center mt-4">Continue logging In! <br /><a className="text-blue-600 hover-underline" href="http://localhost:3000/signin">Sign In</a></p>
+
     </div>
 
 
