@@ -2,6 +2,8 @@
 import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
 import { User } from "../models/userModel";
+import ConnectToDb from "../Db/DBconnection";
+await ConnectToDb();
 
 interface emailPropsType {
   email: string;
@@ -52,7 +54,7 @@ export async function SendEmail({ email, emailType, userId }: emailPropsType) {
       <a href="${process.env.NEXT_PUBLIC_DOMAIN}/${
         emailType === "Verify"
           ? `verifyEmail?token=${hashedToken}`
-          : `resetpassword?token=${hashedToken}`
+          : `newPwdPage?token=${hashedToken}`
       }">
       here</a> 
       ${
@@ -65,7 +67,7 @@ export async function SendEmail({ email, emailType, userId }: emailPropsType) {
        ${process.env.NEXT_PUBLIC_DOMAIN}/${
         emailType === "Verify"
           ? `verifyemail?token=${hashedToken}`
-          : `resetpassword?token=${hashedToken}`
+          : `newPwdPage?token=${hashedToken}`
       }`,
     };
 
